@@ -52,3 +52,49 @@ uma resposta para esse pedido, então ele entrega a informação.
     - Condição criptografada para dados sensíveis.
       - CRIPTOGRAFIA -> Lingua única entre o servidor e um site
       - CERTIFICADO SSL
+
+### INTRODUÇÃO A APIS
+  APIs são interfaces que permitem a comunicação a integração entre diferentes aplicações de software(SITES, Aplicativos e dispositivos)
+
+API = Application Programming interface / interface de Programação a aplicativos.
+![API](/src/images/api.gif)
+  - Conjunto de rotinas e padrões que nos fornecem acesso aos dados.
+  - FORMATO REST - como um cartão postal, mais leve, pode ser armazenado em cache e mais fácil de atualizar,
+  - FORMATO SOAP - é como um envelope. SObrecarga extra, mais largura de  banda necessária, mais trabalho em ambas as extremidades.
+
+![CRUD](/src/images/crud.png)
+
+### REST API
+  - Representational State Transfer
+![REST](/src/images/restapi_model.png)
+![REST IN ACTION](/src/images/rest_in_action.png)
+
+  - Principais elementos dessa arquitetura
+            REST Clients                    REST REQUEST                        REST SERVER
+    -Smartphone, desktop, IOT          GET/POST/PUT/DELETE METHOD                RESOURCE
+                                                                                 RESOURCE
+      XML/JSON/FORMAT                       REST RESPONSE                        RESOURCE
+
+    - Esse método de solicitação de pedido é feito traves de um <bold>end-point/uri</bold>
+
+        - Endpoint uri destino
+        - headers - ele vai ter mais informações com o cliente, nesse cabeçalho que eu envio uma chave de autenticação.
+        - body é onde utilizamos para conseguir transmitir essas informações adicionais ao nosso servidor e também é através do body que vamos receber a resposta para obter o conteúdo.
+        - response - resposta negativa ou positiva. A resposta que vamos receber do servidor ela vai ser no formato xlm
+    - Arquitetura REST API
+    ![Arq rest api](/src/images/arquitetura_rest.png)
+
+
+### FLASK WEB DEVELOPMENT ONE DROP AT TIME
+- Flask é um micro framework que utiliza a linguagem python para criar aplicativos web.
+- 1-sistema padronizado de gateway WSGI padrão de desenvolvimento em python para garantir conexão e a comunicação
+- BASE Werkzeug nos ajuda de forma nativa no flask a implementar as requests, carregamento de dados, conexões, rotas de acesso, para nos ajudar a desenvolver o fluxo de comunicação
+- Jinja componentização de templates web
+
+### INSTALANDO O FLASK
+- Comando
+`$ mkdir myproject`
+`$ cd myproject`
+`$ python3 -m venv .venv`
+`$ . .venv/bin/activate`
+`$ pip install Flask`

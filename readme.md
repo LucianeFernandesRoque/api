@@ -98,3 +98,9 @@ API = Application Programming interface / interface de Programação a aplicativ
 `$ python3 -m venv .venv`
 `$ . .venv/bin/activate`
 `$ pip install Flask`
+
+### executando um projeto com o Flask
+`flask --app app run`
+
+- URL lib ajuda a manipular requisições para um endpoint.
+- Json irá tratar os dados que recebi

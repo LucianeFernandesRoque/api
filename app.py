@@ -10,8 +10,16 @@ def get_list_characters_page():
     data = response.read()
     dict = json.loads(data)
 
-    return render_template("characters.html", characters=dict["results"])    
+    return render_template("characters.html", characters=dict["results"])
 
+@app.route("/personagem/<id>")
+def get_profile(id):
+    url = "https://rickandmortyapi.com/api/character/" + id
+    response = urllib.request.urlopen(url)
+    data = response.read()
+    dict = json.loads(data)
+
+    return render_template("profile.html", profile=dict)
 @app.route("/lista")
 def get_list_characters():
 

@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="row">
+    {% for prof_unique in profile %}
+        <div class="col-sm3 col-6">
+
+            <img src="{{ prof_unique.image }}"  alt="{{prof_unique.name}}"
+            class="img-fluid img-thumbnail" />
+
+            <h3 class="h5">{{prof_unique.name}}</h3>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

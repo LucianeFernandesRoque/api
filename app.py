@@ -12,7 +12,7 @@ def get_list_characters_page():
 
     return render_template("characters.html", characters=dict["results"])
 
-@app.route("/personagem/<id>")
+@app.route("/profile/<id>")
 def get_profile(id):
     url = "https://rickandmortyapi.com/api/character/" + id
     response = urllib.request.urlopen(url)

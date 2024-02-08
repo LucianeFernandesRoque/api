@@ -103,4 +103,22 @@ API = Application Programming interface / interface de Programação a aplicativ
 `flask --app app run`
 
 - URL lib ajuda a manipular requisições para um endpoint.
-- Json irá tratar os dados que recebi
+- Json irá tratar os dados que recebi.
+
+### FAST API
+
+#### Características do Fast API
+- Utilização Uvicorn e Starlette
+  - Starlette => gestão de comunicação em tempo real
+  - Uvicorn => Trabalha com a gestão a ambientes de servidores web, pensando no quesito performance.Interface padrão de servidores. ASGI
+- Validação de tipos de dados com Pydantic
+- Desempenho com resursos assíncronos
+- escalabilidade
+- Facilidade de uso.
+- Documentação automática.
+
+Síncrono x Assíncrono
+
+![Sincrono x Assincrono](/src/images/sincrono_x_assincrono.png)
+
+Serverless é o tipo de arquitetura onde vamos desenvolver apis que vao disparar funções de atividades com base em eventos.

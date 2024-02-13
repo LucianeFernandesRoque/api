@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 import urllib.request
 import json
 app = Flask(__name__)
@@ -20,7 +20,14 @@ app = Flask(__name__)
 @app.route("/locations")
 def get_locations():
     url = "https://rickandmortyapi.com/api/location"
-    response = urllib.request.urlopen(url)
-    dict = json.loads(response.read())
-    
-    return json.dumps(dict)
+    response_data = urllib.request.urlopen(url)
+    data = json.loads(response_data.read())
+
+    locations_data = []
+
+    for location in data["results"]:
+        name = location["name"]
+        dimension = location["dimension"]
+        type = location["type"]
+        locations_data.append({"name": name, "dimension": dimension, "type": type})
+    return jsonify(locations_data)

@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, render_template
 import urllib.request
 import json
 app = Flask(__name__)
@@ -17,7 +17,7 @@ app = Flask(__name__)
 # conter uma tabela com as seguintes informações: nome, tipo e
 # dimensão. A tabela deverá conter um link para a página de perfil
 # da localização.
-@app.route("/locations")
+@app.route("/locations.html")
 def get_locations():
     url = "https://rickandmortyapi.com/api/location"
     response_data = urllib.request.urlopen(url)
@@ -26,8 +26,18 @@ def get_locations():
     locations_data = []
 
     for location in data["results"]:
+        id = location["id"]
         name = location["name"]
         dimension = location["dimension"]
         type = location["type"]
-        locations_data.append({"name": name, "dimension": dimension, "type": type})
-    return jsonify(locations_data)
+        locations_data.append({"id": id, "name": name, "dimension": dimension, "type": type})
+    return render_template("locations.html", locations=locations_data)
+
+@app.route("/location/<id>")
+def get_location(id):
+    url = "https://rickandmortyapi.com/api/location/" + id
+    response_data = urllib.request.urlopen(url)
+    data = response_data.read()
+    dict = json.loads(data)
+    print(dict)
+    return render_template("location.html", location=dict)

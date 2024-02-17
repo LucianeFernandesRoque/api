@@ -1,9 +1,18 @@
-{% extends 'layout.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Location</title>
+</head>
+<body>
+    <h1>{{location.name}}</h1>
+    <p>Type: {{location.type}}</p>
+    <p>Dimension: {{location.dimension}}</p>
+    <h2>Residents</h2>
+    <ul>
+        {% for name in character_names %}
+            <li>{{name}}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
 
-{% block content %}
-<div class="row">
-    <div class="col-sm-3 col-6">
-        <h1 class="h5">{{location.id}}</h1>
-    </div>
-</div>
-{% endblock %}

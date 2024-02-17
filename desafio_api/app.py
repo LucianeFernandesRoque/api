@@ -37,7 +37,12 @@ def get_locations():
 def get_location(id):
     url = "https://rickandmortyapi.com/api/location/" + id
     response_data = urllib.request.urlopen(url)
-    data = response_data.read()
-    dict = json.loads(data)
-    print(dict)
-    return render_template("location.html", location=dict)
+    data = json.loads(response_data.read())
+
+    character_names = []
+    for character_url in data["residents"]:
+        character_response = urllib.request.urlopen(character_url)
+        character_data = json.loads(character_response.read())
+        character_names.append(character_data["name"])
+
+    return render_template("location.html", location=data, character_names=character_names)

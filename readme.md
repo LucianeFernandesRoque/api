@@ -122,3 +122,4 @@ Síncrono x Assíncrono
 ![Sincrono x Assincrono](/src/images/sincrono_x_assincrono.png)
 
 Serverless é o tipo de arquitetura onde vamos desenvolver apis que vao disparar funções de atividades com base em eventos.
+- biblioteca assycIo

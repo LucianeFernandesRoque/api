@@ -1,7 +1,6 @@
 <table class="table table-bordered">
     <thead>
       <tr>
-        <th scope="col">ID:</th>
         <th scope="col">Nome:</th>
         <th scope="col">Tipo:</th>
         <th scope="col">Dimensão:</th>
@@ -11,7 +10,6 @@
       {% for location in locations %}
       <tr>
         <td><a href="/location/{{location.id}}">{{location.name}}</a></td>
-        <td>{{location.name}}</a></td>
         <td>{{location.type}}</td>
         <td>{{location.dimension}}</td>
       </tr>

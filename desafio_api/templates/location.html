@@ -9,10 +9,11 @@
     <p>Dimension: {{location.dimension}}</p>
     <h2>Residents</h2>
     <ul>
-        {% for name in character_names %}
-            <li>{{name}}</li>
+        {% for character in characters %}
+            <li><a href="{{character.url}}">{{character.name}}</a></li>
         {% endfor %}
     </ul>
+    <a href="/locations.html">Voltar</a>
 </body>
 </html>
 

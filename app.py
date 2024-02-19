@@ -33,8 +33,10 @@ def get_list_characters():
     for character in dict["results"]:
         character_dict = {
             "name": character["name"],
-            "status": character["status"]
-
+            "status": character["status"],
+            "species": character["species"],
+            "gender": character["gender"],
+            "origin": character["origin"]
         }
         characters.append(character_dict)
 

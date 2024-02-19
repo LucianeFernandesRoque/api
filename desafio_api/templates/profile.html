@@ -5,10 +5,27 @@
     <div class="col-sm3 col-6">
         <img src="{{profile.image}}"  alt="{{profile.name}}"
         class="img-fluid img-thumbnail" />
-    </div>
-
-    <div class="col-sm-3 col-6">
         <h1 class="h5">{{profile.name}}</h1>
+        <table class="table table-striped-columns">
+            <thead>
+                <tr>
+            <th>Espécie</th>
+            <th>Gênero</th>
+            <th>Localização</th>
+            <th>URL da Localização</th></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{profile.species}}</td>
+                    <td>{{profile.gender}}</td>
+                    <td>{{profile.origin.name}}</td>
+                    <td><a href="{{profile.origin.url}}">{{profile.origin.url}}</a></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+</div>
+
 </div>
 {% endblock %}

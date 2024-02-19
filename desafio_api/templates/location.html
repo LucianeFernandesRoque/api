@@ -1,19 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Location</title>
-</head>
-<body>
-    <h1>{{location.name}}</h1>
-    <p>Type: {{location.type}}</p>
-    <p>Dimension: {{location.dimension}}</p>
-    <h2>Residents</h2>
-    <ul>
-        {% for character in characters %}
-            <li><a href="{{character.url}}">{{character.name}}</a></li>
-        {% endfor %}
-    </ul>
-    <a href="/locations.html">Voltar</a>
-</body>
-</html>
+{% extends 'layout.html' %}
+{% block content %}
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <td scope="col">Localização: {{location.name}}</td>
+        <td scope="col">Tipo: {{location.type}}</td>
+        <td scope="col">Dimensão:{{location.dimension}}</td>
+      </tr>
+    </thead>
+</table>
+<div class="container">
 
+    <h1 class="text-center"><p>Residentes:</p></h1>
+    <ul class="list-unstyled text-center">
+        <li class="mb-1"><p>{% for character in characters %}
+            <div class="text-center">
+            <a href="{{character.url}}">{{character.name}}</p></li>
+    </ul>
+
+{% endfor %}
+</div>
+{% endblock %}

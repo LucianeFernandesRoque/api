@@ -17,6 +17,27 @@ app = Flask(__name__)
 # conter uma tabela com as seguintes informações: nome, tipo e
 # dimensão. A tabela deverá conter um link para a página de perfil
 # da localização.
+
+@app.route("/")
+def get_list_characters_page():
+    url = "https://rickandmortyapi.com/api/character/"
+    response = urllib.request.urlopen(url)
+    data = response.read()
+    dict = json.loads(data)
+
+    return render_template("characters.html", characters=dict["results"])
+
+@app.route("/profile/<id>")
+def get_profile(id):
+    url = "https://rickandmortyapi.com/api/character/" + id
+    response = urllib.request.urlopen(url)
+    data = response.read()
+    dict = json.loads(data)
+
+    return render_template("profile.html", profile=dict)
+
+@app.route("/lista")
+
 @app.route("/locations.html")
 def get_locations():
     url = "https://rickandmortyapi.com/api/location"
